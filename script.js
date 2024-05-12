@@ -26,14 +26,19 @@ const ans = document.querySelector('.ans');
 const shakeBtn = document.querySelector('.shake-btn');
 const another = document.querySelector('.another');
 
-let random = Math.trunc(Math.random() * answer.length);
-random = answer[random];
-
+let randomAns = function () {
+  random = Math.trunc(Math.random() * answer.length);
+  random = answer[random];
+};
+// for (let i = 0; i < answer.length; i++) {
+//   random = answer[i[random]];
+// }
+randomAns();
+console.log(randomAns(random));
 const randomText = function () {
   random;
   ans.innerHTML = random;
 };
-
 shakeBtn.addEventListener('click', function () {
   //   display the random answer
   if (!text.value) {
@@ -51,8 +56,8 @@ shakeBtn.addEventListener('click', function () {
   }
 });
 another.addEventListener('click', function () {
+  randomAns();
   text.value = '';
-  random;
   ans.innerHTML = 8;
   ans.classList.add('shake');
 });
